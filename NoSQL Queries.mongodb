@@ -1,0 +1,34 @@
+
+
+
+db.customers.insertMany([
+  { '_id': 1, 'first_name': 'Leanor', 'last_name': 'Syde', 'birth_date': new Date('1978-11-16'), 'phone':'862-639-0489', 'email':'lsyde0@oakley.com','street_address': '9396 Comanche Trail', 'city':'Newark', 'state': 'NJ'},
+  { '_id': 2, 'first_name': 'Conrado', 'last_name': 'Pinke', 'birth_date': new Date('2001-08-16'), 'phone':'512-440-3848', 'email':'cpinke1@discovery.com','street_address': '739 Pond Drive', 'city':'Austin', 'state': 'TX'},
+  { '_id': 3, 'first_name': 'Filmore', 'last_name': 'Linnit', 'birth_date': new Date('1954-07-25'), 'phone':'203-421-2312', 'email':'flinnit2@nbcnews.com','street_address': '3 Jenna Avenue', 'city':'New Haven', 'state': 'CT'},
+  { '_id': 4, 'first_name': 'Fee', 'last_name': 'Conneau', 'birth_date': new Date('1994-10-04'), 'phone':'480-382-3487', 'email':'fconneau3@tinypic.com','street_address': '017 Norway Maple Pass', 'city':'Gilbert', 'state': 'AZ'},
+  { '_id': 5, 'first_name': 'Molli', 'last_name': 'Butrimovich', 'birth_date': new Date('1963-04-08'), 'phone':'785-112-3346', 'email':'mbutrimovich4@imdb.com','street_address': '67045 Pennsylvania Drive', 'city':'Topeka', 'state': 'KS'},
+]);
+
+db.customer_orders.insertMany([
+  { '_id': 1, 'order_date': new Date('2014-03-01'), 'status': 2, 'shipper_id': null, 'shipped_date': new Date('2017-09-01')},
+  { '_id': 2, 'order_date': new Date('2019-05-2025'), 'status': 3, 'shipper_id': 3, 'shipped_date': new Date('2019-05-28') },
+  { '_id': 3, 'order_date': new Date('2022-05-11'), 'status': 2, 'shipper_id': 10, 'shipped_date': new Date('2022-05-14') },
+  { '_id': 4, 'order_date': new Date('2017-03-23'), 'status': 2, 'shipper_id': null, 'shipped_date': null},
+  { '_id': 5, 'order_date': new Date('2018-04-20'), 'status': 3, 'shipper_id': 1, 'shipped_date': new Date('2018-04-22') },
+]);
+
+db.products.insertMany([
+	{_id: 1, product_name: "Cabbage Nappa", quantity_in_stock: 67, unit_price: 1.22},
+	{_id: 2, product_name: "Tea_Green", quantity_in_stock: 100, unit_price: 1.34},
+	{_id: 3, product_name: "French Pastry-Mini Chocolate", quantity_in_stock: 52, unit_price: 2.09},
+	{_id: 4, product_name: "Asparagus-Frozen", quantity_in_stock: 99, unit_price: 2.53},
+	{_id: 5, product_name: "Lotus Rootlets-Canned", quantity_in_stock: 50, unit_price: 1.66}
+    ]); 
+
+// Queries
+db.products.aggregate([{$project:{ quantity_in_stock:1, unit_price:1, total: { $multiply: [ "$quantity_in_stock", "$unit_price" ] }}}])
+
+db.customer_orders.find({shipper_id: null})
+
+db.products.find({quantity_in_stock: {$lt: 60}})
+
