@@ -16,7 +16,7 @@ Throughout the project, best practices for database design and normalization wer
 
 ## Skills and Topics Covered
 - **Database Design**: Conceptual and relational modeling, including EER and UML diagrams.
-- **SQL Proficiency**: Writing and optimizing queries, joins, views, triggers, and stored procedures, to retrieve meaningful insights from the data like customer behavious, product sales and order statuses.
+- **SQL Proficiency**: Writing and optimizing queries, joins, views, triggers, and stored procedures, to retrieve meaningful insights from the data like customer behaviour, product sales and order statuses.
 - **NoSQL Knowledge**: Creating and querying MongoDB collections to handle unstructured data, and executing aggregate queries.
 - **Data Analysis**: Using Python (Pandas, Matplotlib) to perform data analysis and visualization, and to represent data trends and patterns.
 - **Data Integration**: Connecting MySQL with Python for seamless data retrieval, analysis and visualization.
